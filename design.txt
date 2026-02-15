@@ -1,0 +1,23 @@
+Portfolio shall include:
+•	Portfolio name.
+•	List of Partitions.
+•	Activity
+Each Partition shall include:
+•	Partition name.
+•	Money balance.
+•	Activity.
+Activity shall include:
+•	List of Transactions
+•	List of Standing orders
+Each Transaction shall include:
+•	Partition name.
+•	Added money.
+•	Date
+Each Standing order shall include:
+•	Partition Name.
+•	Money to add.
+•	Execution date.
+
+How to manage the standing orders?
+Once the application starts-up – compare the transactions' dates to Standing orders' execution date (and other properties). For every missing one, execute the order, until there is no missing order to execute. I.E the iteration stops once we hit the earliest Transaction that meets the Standing order.
+But there is a corner case – when there is no any Transaction that meets the Standing order at all. Possibly for this reason it's necessary to hold start date as part of Standing order. But then what would we do with gaps? I think it does not make sense to fill gaps that come before the earliest Transaction that meets the Standing order we found first.
